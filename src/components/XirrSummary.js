@@ -5,7 +5,8 @@ function XirrSummary() {
   const [data, setData] = useState([]);
 
   useEffect(() => {
-   axios.get('/api/transform/transform')
+   axios.get(`${process.env.REACT_APP_API}/api/transform/transform`)
+
   .then(res => {
     if (Array.isArray(res.data)) {
       setData(res.data);
