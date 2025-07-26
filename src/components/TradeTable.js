@@ -16,7 +16,8 @@ function TradeTable({ trades }) {
         </tr>
       </thead>
       <tbody>
-        {trades.map((trade, index) => (
+        {/* Check if trades is an array before mapping */}
+        {Array.isArray(trades) && trades.map((trade, index) => (
           <tr key={index}>
             <td>{new Date(trade.date).toLocaleDateString()}</td>
             <td>{trade.symbol}</td>
