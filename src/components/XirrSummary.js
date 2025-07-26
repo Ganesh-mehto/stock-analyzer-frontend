@@ -5,7 +5,20 @@ function XirrSummary() {
   const [data, setData] = useState([]);
 
   useEffect(() => {
-    axios.get('/api/transform/transform').then(res => setData(res.data));
+   axios.get('/api/transform/transform')
+  .then(res => {
+    if (Array.isArray(res.data)) {
+      setData(res.data);
+    } else {
+      console.error('Expected array but received:', res.data);
+      setData([]);
+    }
+  })
+  .catch(err => {
+    console.error('Failed to fetch data:', err);
+    setData([]);
+  });
+
   }, []);
 
   return (
