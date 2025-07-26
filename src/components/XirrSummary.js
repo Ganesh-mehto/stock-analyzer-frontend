@@ -1,12 +1,12 @@
 import React, { useEffect, useState } from 'react';
 import axios from 'axios';
-
+const apiUrl = process.env.REACT_APP_API 
 
 function XirrSummary() {
   const [data, setData] = useState([]);
 
   useEffect(() => {
-   axios.get(`${process.env.REACT_APP_API}/api/transform/transform`)
+   axios.post(`${apiUrl}/api/transform/transform`, data)
 
   .then(res => {
     if (Array.isArray(res.data)) {
