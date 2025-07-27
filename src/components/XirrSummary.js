@@ -6,7 +6,7 @@ function XirrSummary() {
 const REACT_APP_API = process.env.REACT_APP_API || 'http://localhost:5000';
 
   useEffect(() => {
-    axios.get(`${REACT_APP_API}/api/transform/transform`)
+    axios.get(`${REACT_APP_API}/api/transform`)
       .then(res => {
         if (Array.isArray(res.data)) {
           setData(res.data);
