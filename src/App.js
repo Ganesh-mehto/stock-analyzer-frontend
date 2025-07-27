@@ -4,7 +4,6 @@ import TradeTable from './components/TradeTable';
 import axios from 'axios';
 import { Container } from 'react-bootstrap';
 import XirrSummary from './components/XirrSummary';
-
 function App() {
   const [trades, setTrades] = useState([]);
 
@@ -27,7 +26,7 @@ function App() {
       <h2> Stock Trade Upload</h2>
       <UploadForm onUploadSuccess={fetchTrades} />
       <TradeTable trades={trades} />
-      <XirrSummary />
+      <XirrSummary/>
     </Container>
   );
 }

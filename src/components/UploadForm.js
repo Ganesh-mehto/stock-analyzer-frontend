@@ -15,7 +15,7 @@ function UploadForm({ onUploadSuccess }) {
     setLoading(true);
 
     try {
-      await axios.post(`${apiUrl}/api/upload`, formData);
+      await axios.post(`/api/upload`, formData);
 
       alert('Upload successful');
       onUploadSuccess(); // Refresh trades
