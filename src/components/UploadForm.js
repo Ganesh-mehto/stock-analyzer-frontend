@@ -1,7 +1,7 @@
 import React, { useState } from 'react';
 import axios from 'axios';
 import { Button, Form, Spinner } from 'react-bootstrap';
-const apiUrl = process.env.REACT_APP_API 
+const REACT_APP_API = process.env.REACT_APP_API || 'http://localhost:5000';
 
 function UploadForm({ onUploadSuccess }) {
   const [file, setFile] = useState(null);
@@ -15,7 +15,7 @@ function UploadForm({ onUploadSuccess }) {
     setLoading(true);
 
     try {
-      await axios.post(`/api/upload`, formData);
+      await axios.post(`${REACT_APP_API}/api/upload`, formData);
 
       alert('Upload successful');
       onUploadSuccess(); // Refresh trades
