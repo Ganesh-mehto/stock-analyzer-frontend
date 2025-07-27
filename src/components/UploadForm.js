@@ -1,12 +1,12 @@
 import React, { useState } from 'react';
 import axios from 'axios';
 import { Button, Form, Spinner } from 'react-bootstrap';
-const REACT_APP_API = process.env.REACT_APP_API || 'http://localhost:5000';
+
 
 function UploadForm({ onUploadSuccess }) {
   const [file, setFile] = useState(null);
   const [loading, setLoading] = useState(false);
-
+const REACT_APP_API = process.env.REACT_APP_API || 'http://localhost:5000';
   const handleUpload = async () => {
     if (!file) return alert("Please select a file");
 

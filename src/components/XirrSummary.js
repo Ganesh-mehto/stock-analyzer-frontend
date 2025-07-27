@@ -1,9 +1,9 @@
 import React, { useEffect, useState } from 'react';
 import axios from 'axios';
-const REACT_APP_API = process.env.REACT_APP_API || 'http://localhost:5000';
 
 function XirrSummary() {
   const [data, setData] = useState([]);
+const REACT_APP_API = process.env.REACT_APP_API || 'http://localhost:5000';
 
   useEffect(() => {
     axios.get(`${REACT_APP_API}/api/transform/transform`)
